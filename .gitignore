@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# delete personal files and readme
+TODO.md 
+.vscode/
