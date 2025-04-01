@@ -1,0 +1,4 @@
+- [] Agregar funcionalidades al table
+    - [] paginación
+    - [] Buscar
+    - [] mostrar de a 5-10-15, etc...

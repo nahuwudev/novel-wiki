@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = (async () => {
+  const characters = await getCollection("characters");
+  return characters.map((character) => ({
+    params: { id: character.slug },
+    props: { character },
+  }));
+}) satisfies GetStaticPaths;
+
+const { character } = Astro.props;
+const { data } = character;
+
+const { Content } = await render(character);
+---
+
+<Layout>
+  <div class="flex gap-12 justify-center">
+    <main class="prose">
+      <Content />
+    </main>
+
+    <aside>
+      <div class="mb-3 text-right">
+        <a class="text-slate-400 underline underline-offset-4" href="/">Volver atrás</a>
+      </div>
+      <img
+        class="w-72 h-auto rounded"
+        src={data.profileUrl ?? "/not-found.png"}
+        alt={data.nombre}
+        loading="eager"
+      />
+    </aside>
+  </div>
+</Layout>

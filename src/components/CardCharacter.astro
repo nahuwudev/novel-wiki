@@ -1,0 +1,26 @@
+---
+import type { InferEntrySchema } from "astro:content";
+
+type Character = InferEntrySchema<"characters"> & { slug: string };
+
+interface Props {
+  character: Character;
+}
+
+const { character } = Astro.props;
+---
+
+<article class="relative hover:scale-[98%] transition-all duration-500">
+  <h3
+    class="cursor default italic font-light absolute text-slate-300 bottom-5 flex justify-center w-full"
+  >
+    {character.nombre}
+  </h3>
+  <a href={`/personajes/${character.slug}`}>
+    <img
+      class="w-full h-30 object-cover rounded-md"
+      src={character.profileUrl}
+      alt={character.nombre}
+    />
+  </a>
+</article>

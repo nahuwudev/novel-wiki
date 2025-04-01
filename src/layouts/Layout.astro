@@ -1,0 +1,42 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Footer from "../section/Footer.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Borealis</title>
+  </head>
+  <body class="space-y-10">
+    <div>
+      <Navigation />
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  html {
+    font-family: system-ui, sans-serif;
+  }
+
+  body {
+    display: grid;
+    background-color: #fafafa;
+    min-height: 100dvh;
+    grid-template-rows: 1fr auto;
+  }
+
+  body > div {
+    @apply w-[90%] mx-auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+</style>

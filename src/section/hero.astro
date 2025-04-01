@@ -1,0 +1,33 @@
+---
+import hero from "../assets/hero.jpg";
+import { Image } from "astro:assets";
+---
+
+<section class="flex gap-12 justify-between my-10">
+  <div class="prose flex flex-col items-center sm:items-start justify-center">
+    <h1 class="text-center sm:text-left xl:text-6xl font-medium mb-0">Las Crónicas de Borealis</h1>
+
+    <p class="text-lg xl:mt-10 text-center sm:text-left">
+      Explore the vast world of Mystara, where magic and mythology intertwine in
+      an epic tale of adventure and destiny.
+    </p>
+
+    <div class="xl:mt-10">
+      <a
+        class="bg-neutral-900 text-white rounded-md p-3 xl:p-4 no-underline"
+        href="/"
+      >
+        Comenzar a Leer
+      </a>
+    </div>
+  </div>
+
+  <div class="hidden sm:flex">
+    <Image
+      class="rounded-md w-[40rem] h-auto"
+      src={hero}
+      alt="novel book "
+      loading="eager"
+    />
+  </div>
+</section>

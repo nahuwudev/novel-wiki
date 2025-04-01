@@ -1,0 +1,22 @@
+---
+import { getEntry } from "astro:content";
+import CardCharacter from "../components/CardCharacter.astro";
+
+const maia = await getEntry("characters", "maia");
+const thael = await getEntry("characters", "thael");
+
+const characters = [maia, thael, maia].filter(Boolean);
+---
+
+<section class="my-20 space-y-4">
+  <h1 class="text-2xl">Personajes principales</h1>
+  <div class="grid xs:grid-cols-1 md:grid-cols-3 gap-10">
+    {
+      characters.map((char) =>
+        char ? (
+          <CardCharacter character={{ ...char.data, slug: char.slug }} />
+        ) : null
+      )
+    }
+  </div>
+</section>

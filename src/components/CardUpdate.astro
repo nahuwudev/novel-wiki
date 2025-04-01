@@ -1,0 +1,39 @@
+---
+import Book from "../components/icons/Book.svg";
+import Chapter from "../components/icons/Chapter.svg";
+
+interface Props {
+  update: "chapter" | "lore";
+}
+
+const { update } = Astro.props;
+const Icon = update === "chapter" ? Chapter : Book;
+
+// Textos dinámicos
+const title =
+  update === "chapter"
+    ? "Nuevo capítulo disponible"
+    : "Descubre un fragmento oculto del mundo";
+const description =
+  update === "chapter"
+    ? "Capítulo 15: Entre sombras y promesas rotas."
+    : "Avery contra el Grifarido definitivo: la batalla que cambió la historia.";
+const releaseDate = "Lanzamiento: Marzo 15, 2025";
+---
+
+<a href="/" class="block">
+  <article class="bg-white rounded-md shadow p-2 transition hover:shadow-lg">
+    <div class="flex items-center space-x-4">
+      <Icon width={32} />
+      <div>
+        <h4 class="font-semibold">{title}</h4>
+        <p class="text-sm text-gray-600">{description}</p>
+      </div>
+    </div>
+
+    <div class="text-sm text-slate-500 flex justify-between mt-2">
+      <p>{releaseDate}</p>
+      <p class="italic text-gray-400">Nahuwu</p>
+    </div>
+  </article>
+</a>

@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import Hero from "../section/hero.astro";
+import MainCharacters from "../section/MainCharacters.astro";
+import World from "../section/World.astro";
+import LatestUpdates from "../section/LatestUpdates.astro";
+
+const characters = await getCollection("characters");
+
+const chars = characters.map((char) => ({
+  ...char.data,
+  slug: char.slug,
+}));
+---
+
+<Layout>
+  <main>
+    <Hero />
+    <MainCharacters />
+
+    <LatestUpdates />
+  </main>
+</Layout>

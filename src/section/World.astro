@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import world_map from "../assets/world.png";
+---
+
+<section class="space-y-4 relative w-full">
+  <h1
+    class="underline underline-offset-4 italic text-neutral-900 text-2xl flex h-full w-full justify-center items-center z-10"
+  >
+    El mundo de Borealis
+  </h1>
+  <div class="overflow-hidden max-h-80 rounded-md">
+    <Image
+      class="rounded-md w-full object-cover h-96 transform transition-transform duration-300 ease-in-out hover:scale-105"
+      src={world_map}
+      alt="World map"
+    />
+  </div>
+</section>
