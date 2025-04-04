@@ -1,11 +1,22 @@
 ---
 nombre: Thael de Maleborgia
-pais: Imperio de Alveus
-apadrinada: true
-profileUrl: /characters/thael/profile.jpg
-rasgos: 
-    - Primordial
----
+faccion: Imperio de Alveus
+familia: Maleborgia
+linaje: Secundario
+slug: thael
+exomante: true
+habilidad:
+  - Primordial
+relaciones:
+  - nombre: Maia Maleborgia
+    parentesco: Amistad
+    link: /personajes/maia
+  - nombre: Tobias de Maleborgia
+    parentesco: Hermano de crianza
+    link: /personajes/tobias
 
+profile: "../../assets/characters/thael/profile.jpg"
+card_profile: "../../assets/characters/thael/card_profile.jpg"
+---
 
 Me la re como

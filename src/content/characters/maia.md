@@ -1,20 +1,42 @@
 ---
 nombre: Maia Maleborgia
-pais: Imperio de Alveus
-apadrinada: false
+faccion: Imperio de Alveus
+linaje: Primario
+slug: maia
+familia: Maleborgia
+exomante: true
+habilidad:
+  - Bifarico
 rasgos:
   - Rampagor
   - Gardian
   - Teur
-profileUrl: /characters/maia/profile.jpg
+relaciones:
+  - nombre: Thael de Maleborgia
+    parentesco: Amistad
+    link: /personajes/thael
+  - nombre: Tobias de Maleborgia
+    parentesco: Pareja
+    link: /personajes/tobias
+
+profile: "../../assets/characters/maia/profile.jpg"
+card_profile: "../../assets/characters/maia/card_profile.jpg"
 ---
 
 ## Maia Maleborgia
 
-El trauma de la muerte de Marianne y el odio hacia Ignis: Este trauma es más profundo, ya que transformó su percepción del mundo. La muerte de su madre a manos de su padre no solo rompió su idea de lo que es una familia, sino que también marcó su sentido de justicia y la llenó de rencor. Ignis, que antes era respetado por Maia, ahora es la fuente de su odio, y esto afecta todas sus interacciones.
+1. Orígenes y Entorno Familiar
 
-Consecuencia: Maia vive con el deseo latente de venganza ("asesinar a mi padre"), pero también sabe que el odio es una atadura. Este odio hacia Ignis es lo que la empuja a evitar una vida normal o feliz. Siente que, mientras él siga con vida, no podrá realmente ser libre. Esto podría hacerla dudar en entregarse completamente a Tobias, pues teme que él se vea arrastrado a su odio o que ella misma no sea capaz de ofrecerle algo mejor hasta que haya resuelto esa parte de su vida.
+Maia Maleborgia proviene de la influyente y poderosa Casa Maleborgia, una de las dinastías más prominentes del imperio de Alveus. Esta casa está marcada por su riqueza, poder y la tradición de liderazgo que se ha transmitido a lo largo de generaciones. Sin embargo, para Maia, este legado pesa más que ser una fuente de orgullo; se ha convertido en un recordatorio constante de su dolor personal y los traumas familiares que enfrenta.
 
-Conflicto: Si Maia descubre la verdad detrás de la muerte de su madre (que Marianne tomó la culpa por el bien de Ignis y la familia), esto podría desestabilizar su mundo. Si ella supiera que su madre no era culpable, sino que sacrificó su vida por el bienestar de su familia, ¿cómo manejaría ese conocimiento? ¿Podría Maia seguir adelante con su deseo de venganza o el sacrificio de su madre le daría una razón para reconsiderar?
+2. Educación y Desarrollo Personal
 
-Si Maia supiera la verdad, no desataria aun mas su odio? pero quiza tambien pienso... Podria analizar "mi madre murio por el sueño de otro" "es tan presa como lo estoy siendo yo, viviendo por darle una expectativa que no podra ver nunca por que la realidad es que Marianne ya no esta"
+Desde una edad temprana, Maia muestra un interés por el aprendizaje y el conocimiento. Su hábito de pasar horas en la biblioteca y su deseo de desempeñarse bien en su trabajo como asistente bibliotecaria indican que valora la educación y el crecimiento personal. Este amor por los libros no solo refleja su curiosidad intelectual, sino también su necesidad de escapar y encontrar refugio en el conocimiento, lo que puede ser un mecanismo para lidiar con las tensiones de su entorno social y familiar.
+
+4. Relaciones Interpersonales
+
+Las relaciones que mantiene, sobre todo con su hermano Luka y con otros personajes como Tobías, son clave para su desarrollo. Estas interacciones fluctúan entre la camaradería y la rivalidad, mostrando su complejidad emocional. Su dinámica con Luka sugiere una relación de protección y apoyo mutuo, mientras que sus intercambios con Tobias revelan tanto tensión como atracción, lo cual pueden ser reflejos de sus propias inseguridades y deseos.
+
+5. Conflictos Internos y Crecimiento Personal
+
+A lo largo de la narrativa, Maia enfrenta conflictos internos que son esenciales para su desarrollo como personaje. La lucha entre su temperamento fuerte y sus inseguridades crea un dinamismo interesante que la motiva a crecer y superarse. Su capacidad para enfrentar desafíos y su resiliencia en situaciones complicadas sugieren que está en un camino continuo de autoexploración y automejoramiento.

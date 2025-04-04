@@ -18,16 +18,18 @@ const columnHelper = createColumnHelper<Character>();
 
 const columns = [
   columnHelper.accessor("nombre", {
+    header: () => "Nombre",
     cell: (info) => info.getValue(),
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor("pais", {
-    header: () => "Pais",
+  columnHelper.accessor("faccion", {
+    header: () => "Facción",
     cell: (info) => info.renderValue(),
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor("rasgos", {
-    cell: (info) => info.renderValue()?.join(", "),
+  columnHelper.accessor("exomante", {
+    header: () => "Exomante",
+    cell: (info) => (info.renderValue() ? "Si" : "No"),
   }),
 ];
 
@@ -39,7 +41,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
   });
 
   return (
-    <section className="bg-white rounded-md  shadow  p-5">
+    <section className="bg-white rounded-md my-10  shadow  p-5">
       <HeaderTable />
       <table border={1} className="w-full ">
         <thead className="bg-slate-200 h-10">
@@ -83,7 +85,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
 const HeaderTable = () => {
   return (
     <div className="mb-3 flex items-center justify-between">
-      <h3 className="sm:text-2xl text-xl">Personajes</h3>
+      <h3 className="cursor-default sm:text-2xl text-xl">Personajes</h3>
       <input
         className="border border-gray-300 rounded-md p-1"
         placeholder=" Buscar..."

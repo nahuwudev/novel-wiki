@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 export const getStaticPaths = (async () => {
   const characters = await getCollection("characters");
@@ -11,6 +12,9 @@ export const getStaticPaths = (async () => {
   }));
 }) satisfies GetStaticPaths;
 
+const infoClass = "flex justify-between text-sm bg-white h-auto shadow rounded-md p-3";
+const titleInfoClass = "bg-neutral-800 text-white text-center font-bold";
+
 const { character } = Astro.props;
 const { data } = character;
 
@@ -18,21 +22,82 @@ const { Content } = await render(character);
 ---
 
 <Layout>
-  <div class="flex gap-12 justify-center">
-    <main class="prose">
-      <Content />
-    </main>
-
-    <aside>
-      <div class="mb-3 text-right">
-        <a class="text-slate-400 underline underline-offset-4" href="/">Volver atrás</a>
-      </div>
-      <img
+  <div class="flex gap-12 my-20 justify-center">
+    <aside class="space-y-5 min-w-60">
+      <Image
         class="w-72 h-auto rounded"
-        src={data.profileUrl ?? "/not-found.png"}
+        src={data.profile}
         alt={data.nombre}
         loading="eager"
       />
+
+      <h4 class={titleInfoClass}>
+        Información
+      </h4>
+
+      <div
+        class={infoClass}
+      >
+        <ul class="text-gray-500">
+          <li>Facción</li>
+          <li class="my-2">Familia</li>
+          <li>Linaje</li>
+        </ul>
+        <ul class="">
+          <li>{data.faccion}</li>
+          <li class="my-2">{data.familia}</li>
+          <li>{data.linaje}</li>
+        </ul>
+      </div>
+
+      {
+         data.habilidad && (
+        <h4 class={titleInfoClass}>Habilidades</h4>
+          <div class={infoClass}>
+            <ul class="space-y-2">
+              {data.habilidad.map((r) => (
+                <li>
+                  <a href="/">{r}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+
+      {
+         data.rasgos && (
+        <h4 class={titleInfoClass}>Rasgos</h4>
+          <div class={infoClass}>
+            <ul class="space-y-2">
+              {data.rasgos.map((r) => (
+                <li class="">{r}</li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      <h4 class="bg-neutral-800 text-white text-center font-bold">Vinculos</h4>
+      <div class="bg-white shadow p-2 rounded-md">
+        {
+          data.relaciones.map((r, index) => (
+            <div
+              class={`grid py-2 ${index !== data.relaciones.length - 1 ? "border-b border-b-gray-400" : ""}`}
+            >
+              <a class="no-underline text-sm" href={r.link}>
+                {r.nombre}
+              </a>
+              <span class="text-slate-500 text-sm">{r.parentesco}</span>
+            </div>
+          ))
+        }
+      </div>
     </aside>
+
+    <main class="prose">
+      <Content />
+    </main>
   </div>
 </Layout>

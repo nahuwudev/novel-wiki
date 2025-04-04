@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Table from "../../section/Table";
+import { getCollection } from "astro:content";
+
+const characters = await getCollection("characters");
+
+const chars = characters.map((char) => ({
+  ...char.data,
+  slug: char.slug,
+}));
+---
+
+<Layout>
+  <Table data={chars} client:only />
+</Layout>

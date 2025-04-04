@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import card_profile from "../assets/characters/maia/card_profile.jpg";
 import type { InferEntrySchema } from "astro:content";
 
 type Character = InferEntrySchema<"characters"> & { slug: string };
@@ -10,17 +12,19 @@ interface Props {
 const { character } = Astro.props;
 ---
 
-<article class="relative hover:scale-[98%] transition-all duration-500">
-  <h3
-    class="cursor default italic font-light absolute text-slate-300 bottom-5 flex justify-center w-full"
-  >
-    {character.nombre}
-  </h3>
-  <a href={`/personajes/${character.slug}`}>
-    <img
-      class="w-full h-30 object-cover rounded-md"
-      src={character.profileUrl}
+<a href={`/personajes/${character.slug}`}>
+  <article class="relative   overflow-hidden rounded">
+    <h3
+      class="transition-all cursor duration-500 default italic font-light absolute text-slate-300 bottom-5 flex justify-center w-full"
+    >
+      {character.nombre}
+    </h3>
+
+    <Image
+      class="rounded-md w-full h-30 object-cover hover:scale-105 transition-all duration-500"
+      src={character.card_profile}
       alt={character.nombre}
+      loading="eager"
     />
-  </a>
-</article>
+  </article>
+</a>

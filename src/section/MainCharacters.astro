@@ -4,8 +4,9 @@ import CardCharacter from "../components/CardCharacter.astro";
 
 const maia = await getEntry("characters", "maia");
 const thael = await getEntry("characters", "thael");
+const tobias = await getEntry("characters", "tobias");
 
-const characters = [maia, thael, maia].filter(Boolean);
+const characters = [maia, thael, tobias].filter(Boolean);
 ---
 
 <section class="my-20 space-y-4">
