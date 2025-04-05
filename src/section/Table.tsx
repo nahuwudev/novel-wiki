@@ -4,6 +4,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 import type { InferEntrySchema } from "astro:content"; // Importando el tipo correcto de InferEntrySchema
 
@@ -34,15 +35,24 @@ const columns = [
 ];
 
 const Table: React.FC<TableProps> = ({ data }) => {
+  const [globalFilter, setGlobalFilter] = React.useState("");
   const table = useReactTable({
     columns,
     data,
+    state: {
+      globalFilter,
+    },
+    onGlobalFilterChange: setGlobalFilter,
+    getFilteredRowModel: getFilteredRowModel(),
     getCoreRowModel: getCoreRowModel(),
   });
 
   return (
     <section className="bg-white rounded-md my-10  shadow  p-5">
-      <HeaderTable />
+      <HeaderTable 
+      globalFilter={globalFilter}
+      setGlobalFilter={setGlobalFilter}
+      />
       <table border={1} className="w-full ">
         <thead className="bg-slate-200 h-10">
           {table.getHeaderGroups().map((headerGroup) => (
@@ -82,11 +92,20 @@ const Table: React.FC<TableProps> = ({ data }) => {
   );
 };
 
-const HeaderTable = () => {
+const HeaderTable = ({
+  globalFilter,
+  setGlobalFilter,
+}: {
+  globalFilter: string;
+  setGlobalFilter: (value: string) => void;
+}) => {
   return (
     <div className="mb-3 flex items-center justify-between">
       <h3 className="cursor-default sm:text-2xl text-xl">Personajes</h3>
       <input
+        value={globalFilter}
+        onChange={(e) => setGlobalFilter(e.target.value)}
+        type="search"
         className="border border-gray-300 rounded-md p-1"
         placeholder=" Buscar..."
       />
